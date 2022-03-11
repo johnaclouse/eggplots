@@ -2,18 +2,15 @@
 % Please edit documentation in R/hgraphr.R
 \name{hgraphr}
 \alias{hgraphr}
-\title{Title}
+\title{hgraphr}
 \usage{
 hgraphr(df)
 }
 \arguments{
-\item{element_blank}{}
-}
-\value{
-
+\item{df}{data frame containing values to be plotted}
 }
 \description{
-Title
+A plot for showing high dimensional attributes with indication of percentil ranges.
 }
 \examples{
 df = data.frame(
