@@ -12,3 +12,5 @@ RoxygenNote: 7.1.2
 Imports: 
     ggplot2,
     magrittr
+URL: https://github.com/johnaclouse/eggplots
+BugReports: https://github.com/johnaclouse/eggplots/issues
