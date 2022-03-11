@@ -19,9 +19,15 @@
     <loc>https://johnaclouse.github.io/eggplots/news/index.html</loc>
   </url>
   <url>
+    <loc>https://johnaclouse.github.io/eggplots/reference/eggplots-package.html</loc>
+  </url>
+  <url>
     <loc>https://johnaclouse.github.io/eggplots/reference/hgraphr.html</loc>
   </url>
   <url>
     <loc>https://johnaclouse.github.io/eggplots/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://johnaclouse.github.io/eggplots/reference/pipe.html</loc>
   </url>
 </urlset>
