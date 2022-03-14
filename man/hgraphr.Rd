@@ -4,18 +4,32 @@
 \alias{hgraphr}
 \title{hgraphr}
 \usage{
-hgraphr(df)
+hgraphr(
+  df,
+  color_palette = c("#ffffff", "#ffd7b5", "#ffb38a", "#ff9248", "#ff6700")
+)
 }
 \arguments{
-\item{df}{data frame containing values to be plotted}
+\item{df}{data frame containing values to be plotted. Data frame must
+contain: dimension, measure, individual, and neighborhood. Dimension is a
+factor, measure is numeric, and individual and neighborhood are logical.}
+
+\item{color_palette}{vector of RGB background colors to be used for
+percentile ranges {(0, 0.5), (0.5, 0.8), (0.8, 0.9), (0.9, 0.95), (0.95,
+1.0)}}
 }
 \description{
-A plot for showing high dimensional attributes with indication of percentil ranges.
+A plot for showing high dimensional attributes with indication of percentile
+ranges.
 }
 \examples{
 df = data.frame(
-x = factor(state.name[1:18]),
-y = runif(18)
-)
+dimension = factor(state.name[1:18]),
+measure = runif(18),
+individual = sample(c(TRUE, FALSE, FALSE), 18, replace = TRUE),
+neighborhood = sample(c(TRUE, TRUE, FALSE), 18, replace = TRUE)
+) \%>\%
+  dplyr::mutate(measure = ifelse(individual == FALSE &
+                                   neighborhood == FALSE, NA, measure))
 hgraphr(df)
 }
