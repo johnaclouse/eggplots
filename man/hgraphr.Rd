@@ -6,6 +6,7 @@
 \usage{
 hgraphr(
   df,
+  index,
   color_palette = c("#ffffff", "#ffd7b5", "#ffb38a", "#ff9248", "#ff6700")
 )
 }
@@ -13,6 +14,8 @@ hgraphr(
 \item{df}{data frame containing values to be plotted. Data frame must
 contain: dimension, measure, individual, and neighborhood. Dimension is a
 factor, measure is numeric, and individual and neighborhood are logical.}
+
+\item{index}{numeric value representing the individual's relative risk index based on the population.}
 
 \item{color_palette}{vector of RGB background colors to be used for
 percentile ranges {(0, 0.5), (0.5, 0.8), (0.8, 0.9), (0.9, 0.95), (0.95,
@@ -31,5 +34,5 @@ neighborhood = sample(c(TRUE, TRUE, FALSE), 18, replace = TRUE)
 ) \%>\%
   dplyr::mutate(measure = ifelse(individual == FALSE &
                                    neighborhood == FALSE, NA, measure))
-hgraphr(df)
+hgraphr(df, index = 0.67)
 }
