@@ -148,7 +148,7 @@ hgraphr <- function(df,
       shape = 4
     ) +
     ggplot2::geom_text(ggplot2::aes(
-      y = 120 + label_offsets,
+      y = 125 + label_offsets,
       label = dimension,
       alpha = vulnerability
     )) +
@@ -169,7 +169,7 @@ hgraphr <- function(df,
       title = "Dimensions",
       caption = "Individual data = circles   neighborhood data = X"
     ) +
-    # ggplot2::theme_minimal() +
+    ggplot2::theme_minimal() +
     ggplot2::theme(
       # plot.background=ggplot2::element_rect(fill='#e3fbff'),
       panel.grid.major.y = ggplot2::element_blank(),
