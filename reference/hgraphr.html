@@ -57,7 +57,7 @@ ranges.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">hgraphr</span><span class="op">(</span>
   <span class="va">df</span>,
   <span class="va">index</span>,
-  color_palette <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#ffffff"</span>, <span class="st">"#ffd7b5"</span>, <span class="st">"#ffb38a"</span>, <span class="st">"#ff9248"</span>, <span class="st">"#ff6700"</span><span class="op">)</span>
+  color_palette <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#feedde"</span>, <span class="st">"#fdd0a2"</span>, <span class="st">"#fdae6b"</span>, <span class="st">"#fd8d3c"</span>, <span class="st">"#f16913"</span><span class="op">)</span>
 <span class="op">)</span></code></pre></div>
     </div>
 
@@ -71,22 +71,24 @@ factor, measure is numeric, and individual and neighborhood are logical.</p></dd
 <dd><p>numeric value representing the individual's relative risk index based on the population.</p></dd>
 <dt>color_palette</dt>
 <dd><p>vector of RGB background colors to be used for
-percentile ranges (0, 0.5), (0.5, 0.8), (0.8, 0.9), (0.9, 0.95), (0.95,
-1.0)</p></dd>
+percentile ranges (0, 50), (50, 80), (80, 90), (90, 95), (95,
+100)</p></dd>
 </dl></div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">df</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
-<span class="r-in">dimension <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">state.name</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">18</span><span class="op">]</span><span class="op">)</span>,</span>
-<span class="r-in">measure <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">18</span><span class="op">)</span>,</span>
-<span class="r-in">individual <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span><span class="op">)</span>, <span class="fl">18</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span class="r-in">neighborhood <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span>, <span class="fl">18</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span class="r-in">dimension <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">state.name</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">22</span><span class="op">]</span><span class="op">)</span>,</span>
+<span class="r-in">measure <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">22</span><span class="op">)</span> <span class="op">*</span> <span class="fl">100</span>,</span>
+<span class="r-in">individual <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span><span class="op">)</span>, <span class="fl">22</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span class="r-in">neighborhood <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span>, <span class="fl">22</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span></span>
 <span class="r-in">  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>measure <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">individual</span> <span class="op">==</span> <span class="cn">FALSE</span> <span class="op">&amp;</span></span>
 <span class="r-in">                                   <span class="va">neighborhood</span> <span class="op">==</span> <span class="cn">FALSE</span>, <span class="cn">NA</span>, <span class="va">measure</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">hgraphr</span><span class="op">(</span><span class="va">df</span>, index <span class="op">=</span> <span class="fl">0.67</span><span class="op">)</span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in check_aesthetics(evaled, n):</span> Aesthetics must be either length 1 or the same as the data (18): y</span>
+<span class="r-in"><span class="fu">hgraphr</span><span class="op">(</span><span class="va">df</span>, index <span class="op">=</span> <span class="fl">67</span><span class="op">)</span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Removed 16 rows containing missing values (geom_point).</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Removed 9 rows containing missing values (geom_point).</span>
+<span class="r-plt img"><img src="hgraphr-1.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
