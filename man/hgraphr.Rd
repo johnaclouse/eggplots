@@ -7,7 +7,7 @@
 hgraphr(
   df,
   index,
-  color_palette = c("#ffffff", "#ffd7b5", "#ffb38a", "#ff9248", "#ff6700")
+  color_palette = c("#feedde", "#fdd0a2", "#fdae6b", "#fd8d3c", "#f16913")
 )
 }
 \arguments{
@@ -18,8 +18,8 @@ factor, measure is numeric, and individual and neighborhood are logical.}
 \item{index}{numeric value representing the individual's relative risk index based on the population.}
 
 \item{color_palette}{vector of RGB background colors to be used for
-percentile ranges {(0, 0.5), (0.5, 0.8), (0.8, 0.9), (0.9, 0.95), (0.95,
-1.0)}}
+percentile ranges {(0, 50), (50, 80), (80, 90), (90, 95), (95,
+100)}}
 }
 \description{
 A plot for showing high dimensional attributes with indication of percentile
@@ -27,12 +27,12 @@ ranges.
 }
 \examples{
 df = data.frame(
-dimension = factor(state.name[1:18]),
-measure = runif(18),
-individual = sample(c(TRUE, FALSE, FALSE), 18, replace = TRUE),
-neighborhood = sample(c(TRUE, TRUE, FALSE), 18, replace = TRUE)
+dimension = factor(state.name[1:22]),
+measure = runif(22) * 100,
+individual = sample(c(TRUE, FALSE, FALSE), 22, replace = TRUE),
+neighborhood = sample(c(TRUE, TRUE, FALSE), 22, replace = TRUE)
 ) \%>\%
   dplyr::mutate(measure = ifelse(individual == FALSE &
                                    neighborhood == FALSE, NA, measure))
-hgraphr(df, index = 0.67)
+hgraphr(df, index = 67)
 }
