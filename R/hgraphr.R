@@ -171,7 +171,7 @@ hgraphr <- function(df,
     ) +
     # ggplot2::theme_minimal() +
     ggplot2::theme(
-      plot.background=ggplot2::element_rect(fill='#e3fbff'),
+      # plot.background=ggplot2::element_rect(fill='#e3fbff'),
       panel.grid.major.y = ggplot2::element_blank(),
       axis.ticks.length = ggplot2::unit(0, "pt"),
       axis.text = ggplot2::element_blank(),
